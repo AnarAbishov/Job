@@ -1,0 +1,132 @@
+﻿@using ProjectFinal.Models
+@{
+    ViewBag.Title = "Index";
+    int count = 0;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="banner">
+    <div class="container">
+        <div class="banner-caption">
+            <div class="search-form">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 p-1">
+                        <select class="form-control " placeholder="Sheher">
+                            <option>Butun Kateqoriyalar</option>
+                            @foreach (Kategoriya item in ViewBag.butun_kategoriyalar)
+                            {
+                                <option>@item.Ad</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4 col-sm-12 p-1">
+                        <select class="form-control " placeholder="Sheher">
+                            <option>Butun Şeherler</option>
+                            @foreach (Sheher item in ViewBag.butun_sheherler)
+                            {
+                                <option>@item.Ad</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4 col-sm-12 p-1">
+                        <select class="form-control " placeholder="Sheher">
+                            <option>Əmək haqqı</option>
+                            @foreach (Min_maash item in ViewBag.emek_haqqi)
+                            {
+                                <option>@item.Mebleg</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4 col-sm-12 p-1">
+                        <select class="form-control " placeholder="Sheher">
+                            <option>Təhsil</option>
+                            @foreach (Tehsil item in ViewBag.tehsil)
+                            {
+                                <option>@item.Derecesi</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4 col-sm-12 p-1">
+                        <select class="form-control " placeholder="Sheher">
+                            <option>
+                                İş tecrubesi
+                            </option>
+                            @foreach (Ish_tecrubesi item in ViewBag.ish_tecrubesi)
+                            {
+                                <option>@item.Ili</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4 col-sm-12 p-1">
+                        <div class="input-group ">
+                            <button type="submit" class="btn btn-danger">
+                                Axtar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="son-elanlar">
+    <div class="container">
+        <div class="son-elanlar-basliq">
+            <div class="row">
+                <div class="col-md-3 float-left">
+                    <div class="laatestjobs">
+                        <h3>
+                            SON ELANLAR
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-md-3 float-left">
+                    <div class="showall floa-right">
+                        <a href="@Url.Action("index","hamisi_elan")">
+                            <h4>Hamısını Göstər</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="diger">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="son-elanlar-text">
+            <div class="row">
+                @foreach (Elanlar item in ViewBag.elanlar) {
+                    count++;
+                        if (count > 20)
+                        {
+                            break;
+                        }
+                
+                <div class="col-md-3">
+                    <a href="@Url.Action("index","elan", new {id =item.Id })">
+                        <div class="tek-elan hvr-curl-top-right">
+                            <div class="elan-adi">
+
+                                <h4>@item.Vezife.Ad</h4>
+
+                            </div>
+                            <div class="maas">
+                                <h5>@item.Min_maash.Mebleg - @item.Max_maash.Mebleg</h5>
+                            </div>
+                            <div class="sirket-adi">
+
+                                <p>@item.Shirket_adi</p>
+
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                }
+            
+            </div>
+        </div>
+    </div>
+</section>
+

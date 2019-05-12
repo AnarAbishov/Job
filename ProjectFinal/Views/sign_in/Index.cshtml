@@ -1,0 +1,54 @@
+﻿@using ProjectFinal.Models
+@{
+    ViewBag.Title = "Index";
+    int count = 0;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+   
+    <div class="container">
+       
+        <div class="card card-login mx-auto mt-5" style="width: 50%;">
+            <div class="alert alert-danger align-middle"  role="alert">
+                Zehmet olmasa giris edin.
+            </div>
+            <div class="card-header">Login</div>
+            <div class="card-body">
+                <form method="post" action="@Url.Action("login","sign_in")">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input name="Leqeb" class="form-control" id="mainNav" type="text" placeholder="Usernamel">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input name="Password" class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
+                    </div>
+                    @if (Session["LoginInvalid"] != null)
+                    {
+                        Session["LoginInvalid"] = null;
+                        <div class="alert alert-info">
+                            Username or password incorrect
+                        </div>
+                    }
+
+                    <button type="submit" class="btn btn-danger btn-block">Login</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+

@@ -1,0 +1,317 @@
+﻿@using ProjectFinal.Models
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="fb:admins" content="100000796456537" />
+    <title>Isaxtar</title>
+    <link href="~/Public/css/hover-min.css" rel="stylesheet">
+    <link rel="icon" href="~/Public/img/2.png" type="image/gif" sizes="16x16">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Public/css/animate.css">
+    <link rel="stylesheet" href="~/Public/css/base.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <button class="navbar-toggler align-items-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a href="@Url.Action("index","home")">
+                    <img src="~/Public/img/333.png" alt="">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("index","iyirmi_elan")">İş elanları</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("index","iyirmi_cv")">İş axtaranlar</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                Yerleshdirmek
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="@Url.Action("index","cv_yarat")">CV yerləşdir</a>
+                                <a class="dropdown-item" href="@Url.Action("index","elan_yarat")">Elan yerləşdir</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("index","blog")">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("index","haqqimizda")">Haqqımızda</a>
+                        </li>
+                    </ul>
+                </div>
+
+               
+
+                @if (Session["Loginned"] == null)
+                {
+                    <button type="button" id="qeydiyyat" class="btn btn-outline-danger " data-toggle="modal" data-target="#myModal">Girish</button>
+                }
+                else
+                {
+                    
+                    <a href="@Url.Action("Logout","home")" class="btn btn-outline-danger ">cixis</a>
+                    <i class="fa fa-user"></i>
+                    <p>@Session["userAd"]</p>
+                }
+
+            </div>
+        </nav>
+    </header>
+    @RenderBody()
+    <footer class="footer">
+        <div class="container">
+            <div class="row lg-menu">
+                <div class="col-md-4 co-sm-4 float-left">
+                    <a href="@Url.Action("index","home")">
+                        <img src="~/Public/img/footer-logo.png" class="img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-md-8 co-sm-8 float-right">
+                    <ul>
+                        <li>
+                            <a href="@Url.Action("index","iyirmi_elan")" title="">Iş elanları</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("index","iyirmi_cv")" title="">İş Axtaranlar</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("index","cv_yarat")" title="">Cv_yarat</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("index","elan_yarat")" title="">Elan_yarat</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("index","blog")" title="">Blog</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("index","haqqimizda")" title="">Haqqımızda</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-3 float-left">
+                    <div class="footer-widget1">
+                        <h3 class="widgettitle widget-title">Haqqımızda</h3>
+                        <div class="textwidget">
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                            <p>
+                                7860 North Park Place
+                                <br>San Francisco, CA 94120
+                            </p>
+                            <p>
+                                <strong>Email:</strong> Support@careerdesk
+                            </p>
+                            <p>
+                                <strong>Call:</strong>
+                                <a href="tel:+15555555555">555-555-1234</a>
+                            </p>
+                            <ul class="footer-social">
+                                <li>
+                                    <a href="https://www.facebook.com">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 float-left">
+                    <div class="footer-widget2">
+                        <h3 class="widgettitle widget-title">İş Elanları</h3>
+                        <div class="textwidget">
+                            <div class="col-md-6 float-left">
+                                <ul class="footer-navigation">
+                                    <li>
+                                        <a href="@Url.Action("index","maliyye_elanlari")" title="">Maliyyə</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("index","marketinq_elanlari")" title="">Marketinq</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("index","informasiya_texnologiyalari_elanlari")" title="">İnformasiya Texnologiyaları</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("index","inzibati_elanlari")" title="">İnzibati</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("index","satish_elanlari")" title="">Satış</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("index","dizayn_elanlari")" title="">Dizayn</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 float-right">
+                                <ul class="footer-navigation">
+                                    <li>
+                                        <a href="@Url.Action("index","huquqshunasliq_elanlari")" title="">Hüquqşünaslıq</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("index","tehsil_ve_elm_elanlari")" title="">Təhsil Və Elm</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("index","senaye_ve_kend_teserrufati_elanlari")" title="">Sənaye Və kənd Təsərrüfatı</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("index","xidmet_elanlari")" title="">Xidmət</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("index","tibb_ve_eczaciliq_elanlari")" title="">Tibb Və Əczaçılıq</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("index","muxtelif_elanlari")" title="">Mütəlif</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 float-left">
+                    <div class="footer-widget3 float-right">
+                        <h3 class="widgettitle widget-title">Əlaqə</h3>
+                        <div class="textwidget">
+                            <form class="footer-form">
+                                <input type="text" class="form-control" placeholder="Your Name">
+                                <input type="text" class="form-control" placeholder="Email">
+                                <textarea class="form-control" placeholder="Message"></textarea>
+                                <button type="submit" class="btn btn-primary">Göndər</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <div class=" modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="tab" role="tabpanel">
+                        <ul ul class="nav nav-tabs " id="myTab" role="tablist">
+                            <li class="nav-item active" style="width:50%;">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Sign In</a>
+                            </li>
+                            <li class="nav-item active" style="width:50%;">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Sign Up</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <img src="~/Public/img/logo.png" class="img-fluid" alt="">
+                                <div class="subscribe ">
+                                    <form class="form-inline" method="post" action="@Url.Action("login","home")">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <input type="text" name="Leqeb" class="form-control" placeholder="Username" style="width:100%;" required="">
+                                                <input type="password" name="Password" class="form-control" placeholder="Password" style="width:100%;" required="">
+                                                <div class="center">
+
+                                                    @if (Session["LoginInvalid"] != null)
+                                                    {
+                                                        Session["LoginInvalid"] = null;
+
+                                                        <div class="alert alert-info">
+                                                            İstifadəçi Adı Və Ya Şifrə Yalnışdır
+                                                        </div>
+
+
+                                                    }
+                                                    <button type="submit" id="login-btn" style="width:100%;" class="btn btn-danger align-items-center"> Login </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <img src="~/Public/img/logo.png" class="img-fluid" alt="">
+                                <form class="form-inline" method="post" action="@Url.Action("add","home")">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input type="text" name="Ad" class="form-control" placeholder="Your Name" style="width:100%;" required="">
+                                            <input type="email" name="Email" class="form-control" placeholder="Your Email" style="width:100%;" required="">
+                                            <input type="text" name="Leqeb" class="form-control" placeholder="Username" style="width:100%;" required="">
+                                            <input type="password" name="Password" class="form-control" placeholder="Password" style="width:100%;" required="">
+                                            <div class="center">
+                                                <button type="submit" id="subscribe" width="100%" class="btn btn-danger"> Create Account </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.12';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <script src="~/Public/js/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script id="dsq-count-scr" src="//isaxtar-az.disqus.com/count.js" async></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+            crossorigin="anonymous"></script>
+    <script src="~/Public/js/script.js"></script>
+</body>
+
+</html>
+

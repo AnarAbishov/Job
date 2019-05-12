@@ -1,0 +1,155 @@
+﻿@model ProjectFinal.Models.Elanlar
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Elanlar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shirket_adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shirket_adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Elanin_tarixi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Elanin_tarixi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bitme_tarixi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bitme_tarixi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Elaqedar_shexs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Elaqedar_shexs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ish_barede_melumat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ish_barede_melumat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Namizede_telebler)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Namizede_telebler)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ish_tecrubesi.Ili)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ish_tecrubesi.Ili)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kategoriya.Ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategoriya.Ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Max_maash.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Max_maash.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Max_yashlar.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Max_yashlar.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Min_maash.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Min_maash.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Min_yashlar.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Min_yashlar.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sheher.Ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sheher.Ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tehsil.Derecesi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tehsil.Derecesi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vezife.Ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vezife.Ad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

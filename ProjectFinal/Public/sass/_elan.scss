@@ -1,0 +1,160 @@
+.parallax_elan {
+    /* The image used */
+    background-image: url("../img/white.jpg");
+    
+        /* Full height */
+        height: 100% !important; 
+    
+        /* Create the parallax scrolling effect */
+        
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 1030px;
+
+        
+      
+        .title{
+            h2 {
+                color: black;
+                text-shadow: 1px 1px 1px $primary-color;
+                padding-top: 190px;
+                display: inline-block;
+            }
+            .company{
+                color: black;
+                text-shadow: 1px 1px 1px $primary-color;
+                display: inline-block;
+            }
+            .maash {
+                color: white;
+                background: $primary-color;
+                text-shadow: 1px 1px 1px $primary-color;
+                display: inline-block;
+                padding: 7px;
+                border-radius: 20%;           
+            }
+        }
+       
+            .parametrler{
+                box-shadow: 0px 0px 30px $primary-color;
+                height: 235px;
+                width: 100%;
+                ul{
+                    padding-top: 10px;
+                    list-style: none;
+                    li{
+                        h5{
+                            display: inline-block;                       
+                            font-weight: bold;
+                            margin-right: 15px;
+                            color: $primary-color;
+                        }
+                        h6{
+                            display: inline-block;                       
+                        }
+                    }
+                }
+            }
+        .elaqe{
+            box-shadow: 0px 0px 30px $primary-color;
+            height: 235px;
+            width: 100%;
+            ul{
+                padding-top: 10px;
+                list-style: none;
+                li{
+                    h5{
+                        display: inline-block;                       
+                        font-weight: bold;
+                        margin-right: 15px;
+                        color: $primary-color;
+                    }
+                    h6{
+                        display: inline-block;
+                       
+                    }
+                }
+            }
+        }
+        .melumat{
+            box-shadow: 0px 0px 30px $primary-color;
+            margin-top: 20px;
+            ul{
+                padding-top: 10px;
+                padding-bottom: 1px;
+                padding-right: 30px;
+                list-style: none;
+                li{
+                    h6{
+                        color: $primary-color;
+                        padding-right: 10px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        .telebler{
+            box-shadow: 0px 0px 30px $primary-color;
+            margin-top: 10px;
+            ul{
+                padding-top: 10px;
+                padding-bottom: 1px;                
+                list-style: none;
+                li{
+                    h6{
+                        color: $primary-color;
+                        padding-right: 10px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .parallax_elan {
+        height: 280px;
+        margin-top: -10px;
+
+        .comments {
+            margin-top: 15%;
+        }
+
+        .title {
+            h2 {
+                padding-top: 100px;
+                font-size: 23px;
+            }
+
+            .company {
+                font-size: 23px;
+                padding-bottom: 20px;
+            }
+
+            .maash {
+                font-size: 22px;
+            }
+        }
+
+        .parametrler {
+            height: 100%;
+        }
+
+        .elaqe {
+            height: 100%;
+            margin-top: 20px;
+        }
+
+        .melumat {
+            height: 100%;
+            margin-top: 40px;
+        }
+
+        .telebler {
+            height: 100%;
+            margin-top: 60px;
+        }
+    }
+   }

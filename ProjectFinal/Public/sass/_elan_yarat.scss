@@ -1,0 +1,133 @@
+
+
+.parallax_elan_yarat {
+    /* The image used */
+    background-image: url("../img/elan-yerleshdir.jpg");
+    
+        /* Full height */
+        height: 100%; 
+    
+        /* Create the parallax scrolling effect */
+        
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 400px;
+
+        h1 {
+            font-size: 60px;
+            font-weight: 600;
+            text-align: center;
+            color: white;
+            text-shadow: 4px 2px 4px $primary-color;
+            padding-top: 120px;
+        }
+}
+.elan_yarat {
+    
+    .container{
+        transform: translateY(-80px);
+        box-shadow: 0 0 10px;
+        .yuxari{
+            height: 120px;
+            background: white;
+            .box{
+                    margin: 0 auto;
+                    margin-top: -40px;
+                    font-size: 50px;
+                    background: $primary-color;
+                    border-radius: 100%;
+                    width: 130px;
+                    height: 130px;
+                    text-align: center;
+                    line-height: 100px;
+                    border: 7px solid white;
+                    i{
+                        color: white;
+                        
+                    }
+                }
+            }
+            .orta {
+                input {
+                    margin-bottom: 15px;
+                    height: 52px;
+                    width: 100%;
+                }
+                select {
+                    height: 52px;
+                    margin-bottom: 15px;
+                }
+                textarea{
+                    margin-bottom: 25px;
+                    width: 100%;
+                }
+                h3{
+                    text-align: center;
+                    color: $primary-color;
+                    margin-bottom: 15px;
+                }
+                button {
+                    padding: 10px;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    border-radius: 10px;
+                    background: $primary-color;
+                    color: white;
+                }
+
+            }
+           
+     }
+}
+
+@media only screen and (max-width: 500px) {
+    
+       .parallax_elan_yarat{
+           .row{
+               h1{
+                   font-size: 55px;
+                   padding-top: 80px
+               }
+           }
+          
+       }
+   }
+   @media only screen and (max-width: 350px) {
+      
+       .parallax_elan_yarat{
+           height: 270px !important;
+           .row{
+               h1{
+                   font-size: 45px;
+                   padding-top: 80px
+               }
+           }
+          
+       }
+       .elan_yarat{
+           .yuxari{
+               .box{
+                   height: 110px !important;
+                   width: 110px !important;
+                   line-height: 90px !important;
+                   
+                   i{
+                       font-size: 45px;
+                      
+                   }
+               }
+           }
+          .orta {
+           margin-top: -45px;
+          }
+       }
+   }
+
+.char-count-Namizede_telebler {
+    margin-left: 45%;
+}
+
+.char-count-Ish_barede_melumat {
+    margin-left: 45%;
+}

@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="isaxtarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sekil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tarix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Basliq" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cinsler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cins" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CVler" Relationship="Self.FK_CVler_Cinsler" FromRole="Cinsler" ToRole="CVler" />
+  </EntityType>
+  <EntityType Name="CVler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ata_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CinsId" Type="Int32" Nullable="false" />
+    <Property Name="Min_yashId" Type="Int32" Nullable="false" />
+    <Property Name="Shekil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TehsilId" Type="Int32" Nullable="false" />
+    <Property Name="Ish_tecrubesiId" Type="Int32" Nullable="false" />
+    <Property Name="VezifeId" Type="Int32" Nullable="false" />
+    <Property Name="SheherId" Type="Int32" Nullable="false" />
+    <Property Name="Min_maashId" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Elave_melumat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KategoriyaId" Type="Int32" Nullable="false" />
+    <Property Name="Cvnin_tarixi" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Bitme_tarixi" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Cinsler" Relationship="Self.FK_CVler_Cinsler" FromRole="CVler" ToRole="Cinsler" />
+    <NavigationProperty Name="Ish_tecrubesi" Relationship="Self.FK_CVler_Ish_tecrubesi" FromRole="CVler" ToRole="Ish_tecrubesi" />
+    <NavigationProperty Name="Kategoriya" Relationship="Self.FK_CVler_Kategoriya" FromRole="CVler" ToRole="Kategoriya" />
+    <NavigationProperty Name="Min_maash" Relationship="Self.FK_CVler_Min_maash" FromRole="CVler" ToRole="Min_maash" />
+    <NavigationProperty Name="Min_yashlar" Relationship="Self.FK_CVler_Min_yashlar" FromRole="CVler" ToRole="Min_yashlar" />
+    <NavigationProperty Name="Sheher" Relationship="Self.FK_CVler_Sheher" FromRole="CVler" ToRole="Sheher" />
+    <NavigationProperty Name="Tehsil" Relationship="Self.FK_CVler_Tehsil" FromRole="CVler" ToRole="Tehsil" />
+    <NavigationProperty Name="Vezife" Relationship="Self.FK_CVler_Vezife" FromRole="CVler" ToRole="Vezife" />
+  </EntityType>
+  <EntityType Name="Elanlar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VezifeId" Type="Int32" Nullable="false" />
+    <Property Name="Shirket_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Min_maashId" Type="Int32" Nullable="false" />
+    <Property Name="Max_maashId" Type="Int32" Nullable="false" />
+    <Property Name="SheherId" Type="Int32" Nullable="false" />
+    <Property Name="Min_yashId" Type="Int32" Nullable="false" />
+    <Property Name="Max_yashId" Type="Int32" Nullable="false" />
+    <Property Name="TehsilId" Type="Int32" Nullable="false" />
+    <Property Name="Ish_tecrubesiId" Type="Int32" Nullable="false" />
+    <Property Name="Elanin_tarixi" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Bitme_tarixi" Type="DateTime" Precision="3" />
+    <Property Name="Elaqedar_shexs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ish_barede_melumat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Namizede_telebler" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KategoriyaId" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Ish_tecrubesi" Relationship="Self.FK_Elanlar_Ish_tecrubesi" FromRole="Elanlar" ToRole="Ish_tecrubesi" />
+    <NavigationProperty Name="Kategoriya" Relationship="Self.FK_Elanlar_Kategoriya" FromRole="Elanlar" ToRole="Kategoriya" />
+    <NavigationProperty Name="Max_maash" Relationship="Self.FK_Elanlar_Max_maash" FromRole="Elanlar" ToRole="Max_maash" />
+    <NavigationProperty Name="Max_yashlar" Relationship="Self.FK_Elanlar_Max_yashlar" FromRole="Elanlar" ToRole="Max_yashlar" />
+    <NavigationProperty Name="Min_maash" Relationship="Self.FK_Elanlar_Min_maash" FromRole="Elanlar" ToRole="Min_maash" />
+    <NavigationProperty Name="Min_yashlar" Relationship="Self.FK_Elanlar_Min_yashlar" FromRole="Elanlar" ToRole="Min_yashlar" />
+    <NavigationProperty Name="Sheher" Relationship="Self.FK_Elanlar_Sheher" FromRole="Elanlar" ToRole="Sheher" />
+    <NavigationProperty Name="Tehsil" Relationship="Self.FK_Elanlar_Tehsil" FromRole="Elanlar" ToRole="Tehsil" />
+    <NavigationProperty Name="Vezife" Relationship="Self.FK_Elanlar_Vezife" FromRole="Elanlar" ToRole="Vezife" />
+  </EntityType>
+  <EntityType Name="Haqqimizda">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Basliq" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Ish_tecrubesi">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ili" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CVler" Relationship="Self.FK_CVler_Ish_tecrubesi" FromRole="Ish_tecrubesi" ToRole="CVler" />
+    <NavigationProperty Name="Elanlar" Relationship="Self.FK_Elanlar_Ish_tecrubesi" FromRole="Ish_tecrubesi" ToRole="Elanlar" />
+  </EntityType>
+  <EntityType Name="Istifadeci">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Leqeb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kategoriya">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CVler" Relationship="Self.FK_CVler_Kategoriya" FromRole="Kategoriya" ToRole="CVler" />
+    <NavigationProperty Name="Elanlar" Relationship="Self.FK_Elanlar_Kategoriya" FromRole="Kategoriya" ToRole="Elanlar" />
+    <NavigationProperty Name="Vezife" Relationship="Self.FK_Vezife_Kategoriya" FromRole="Kategoriya" ToRole="Vezife" />
+  </EntityType>
+  <EntityType Name="Max_maash">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mebleg" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Elanlar" Relationship="Self.FK_Elanlar_Max_maash" FromRole="Max_maash" ToRole="Elanlar" />
+  </EntityType>
+  <EntityType Name="Max_yashlar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Max_yash" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Elanlar" Relationship="Self.FK_Elanlar_Max_yashlar" FromRole="Max_yashlar" ToRole="Elanlar" />
+  </EntityType>
+  <EntityType Name="Min_maash">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mebleg" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CVler" Relationship="Self.FK_CVler_Min_maash" FromRole="Min_maash" ToRole="CVler" />
+    <NavigationProperty Name="Elanlar" Relationship="Self.FK_Elanlar_Min_maash" FromRole="Min_maash" ToRole="Elanlar" />
+  </EntityType>
+  <EntityType Name="Min_yashlar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Min_yash" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CVler" Relationship="Self.FK_CVler_Min_yashlar" FromRole="Min_yashlar" ToRole="CVler" />
+    <NavigationProperty Name="Elanlar" Relationship="Self.FK_Elanlar_Min_yashlar" FromRole="Min_yashlar" ToRole="Elanlar" />
+  </EntityType>
+  <EntityType Name="Sheher">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CVler" Relationship="Self.FK_CVler_Sheher" FromRole="Sheher" ToRole="CVler" />
+    <NavigationProperty Name="Elanlar" Relationship="Self.FK_Elanlar_Sheher" FromRole="Sheher" ToRole="Elanlar" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tehsil">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Derecesi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CVler" Relationship="Self.FK_CVler_Tehsil" FromRole="Tehsil" ToRole="CVler" />
+    <NavigationProperty Name="Elanlar" Relationship="Self.FK_Elanlar_Tehsil" FromRole="Tehsil" ToRole="Elanlar" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Vezife">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KateqoriyaId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CVler" Relationship="Self.FK_CVler_Vezife" FromRole="Vezife" ToRole="CVler" />
+    <NavigationProperty Name="Elanlar" Relationship="Self.FK_Elanlar_Vezife" FromRole="Vezife" ToRole="Elanlar" />
+    <NavigationProperty Name="Kategoriya" Relationship="Self.FK_Vezife_Kategoriya" FromRole="Vezife" ToRole="Kategoriya" />
+  </EntityType>
+  <Association Name="FK_CVler_Cinsler">
+    <End Role="Cinsler" Type="Self.Cinsler" Multiplicity="1" />
+    <End Role="CVler" Type="Self.CVler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cinsler">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CVler">
+        <PropertyRef Name="CinsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CVler_Ish_tecrubesi">
+    <End Role="Ish_tecrubesi" Type="Self.Ish_tecrubesi" Multiplicity="1" />
+    <End Role="CVler" Type="Self.CVler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ish_tecrubesi">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CVler">
+        <PropertyRef Name="Ish_tecrubesiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CVler_Kategoriya">
+    <End Role="Kategoriya" Type="Self.Kategoriya" Multiplicity="1" />
+    <End Role="CVler" Type="Self.CVler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategoriya">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CVler">
+        <PropertyRef Name="KategoriyaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CVler_Min_maash">
+    <End Role="Min_maash" Type="Self.Min_maash" Multiplicity="1" />
+    <End Role="CVler" Type="Self.CVler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Min_maash">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CVler">
+        <PropertyRef Name="Min_maashId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CVler_Min_yashlar">
+    <End Role="Min_yashlar" Type="Self.Min_yashlar" Multiplicity="1" />
+    <End Role="CVler" Type="Self.CVler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Min_yashlar">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CVler">
+        <PropertyRef Name="Min_yashId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CVler_Sheher">
+    <End Role="Sheher" Type="Self.Sheher" Multiplicity="1" />
+    <End Role="CVler" Type="Self.CVler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sheher">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CVler">
+        <PropertyRef Name="SheherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CVler_Tehsil">
+    <End Role="Tehsil" Type="Self.Tehsil" Multiplicity="1" />
+    <End Role="CVler" Type="Self.CVler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tehsil">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CVler">
+        <PropertyRef Name="TehsilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CVler_Vezife">
+    <End Role="Vezife" Type="Self.Vezife" Multiplicity="1" />
+    <End Role="CVler" Type="Self.CVler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vezife">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CVler">
+        <PropertyRef Name="VezifeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Elanlar_Ish_tecrubesi">
+    <End Role="Ish_tecrubesi" Type="Self.Ish_tecrubesi" Multiplicity="1" />
+    <End Role="Elanlar" Type="Self.Elanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ish_tecrubesi">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Elanlar">
+        <PropertyRef Name="Ish_tecrubesiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Elanlar_Kategoriya">
+    <End Role="Kategoriya" Type="Self.Kategoriya" Multiplicity="1" />
+    <End Role="Elanlar" Type="Self.Elanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategoriya">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Elanlar">
+        <PropertyRef Name="KategoriyaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Elanlar_Max_maash">
+    <End Role="Max_maash" Type="Self.Max_maash" Multiplicity="1" />
+    <End Role="Elanlar" Type="Self.Elanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Max_maash">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Elanlar">
+        <PropertyRef Name="Max_maashId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Elanlar_Max_yashlar">
+    <End Role="Max_yashlar" Type="Self.Max_yashlar" Multiplicity="1" />
+    <End Role="Elanlar" Type="Self.Elanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Max_yashlar">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Elanlar">
+        <PropertyRef Name="Max_yashId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Elanlar_Min_maash">
+    <End Role="Min_maash" Type="Self.Min_maash" Multiplicity="1" />
+    <End Role="Elanlar" Type="Self.Elanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Min_maash">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Elanlar">
+        <PropertyRef Name="Min_maashId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Elanlar_Min_yashlar">
+    <End Role="Min_yashlar" Type="Self.Min_yashlar" Multiplicity="1" />
+    <End Role="Elanlar" Type="Self.Elanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Min_yashlar">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Elanlar">
+        <PropertyRef Name="Min_yashId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Elanlar_Sheher">
+    <End Role="Sheher" Type="Self.Sheher" Multiplicity="1" />
+    <End Role="Elanlar" Type="Self.Elanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sheher">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Elanlar">
+        <PropertyRef Name="SheherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Elanlar_Tehsil">
+    <End Role="Tehsil" Type="Self.Tehsil" Multiplicity="1" />
+    <End Role="Elanlar" Type="Self.Elanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tehsil">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Elanlar">
+        <PropertyRef Name="TehsilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Elanlar_Vezife">
+    <End Role="Vezife" Type="Self.Vezife" Multiplicity="1" />
+    <End Role="Elanlar" Type="Self.Elanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vezife">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Elanlar">
+        <PropertyRef Name="VezifeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vezife_Kategoriya">
+    <End Role="Kategoriya" Type="Self.Kategoriya" Multiplicity="1" />
+    <End Role="Vezife" Type="Self.Vezife" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategoriya">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vezife">
+        <PropertyRef Name="KateqoriyaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="isaxtarEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Blog" EntityType="Self.Blog" />
+    <EntitySet Name="Cinsler" EntityType="Self.Cinsler" />
+    <EntitySet Name="CVler" EntityType="Self.CVler" />
+    <EntitySet Name="Elanlar" EntityType="Self.Elanlar" />
+    <EntitySet Name="Haqqimizda" EntityType="Self.Haqqimizda" />
+    <EntitySet Name="Ish_tecrubesi" EntityType="Self.Ish_tecrubesi" />
+    <EntitySet Name="Istifadeci" EntityType="Self.Istifadeci" />
+    <EntitySet Name="Kategoriya" EntityType="Self.Kategoriya" />
+    <EntitySet Name="Max_maash" EntityType="Self.Max_maash" />
+    <EntitySet Name="Max_yashlar" EntityType="Self.Max_yashlar" />
+    <EntitySet Name="Min_maash" EntityType="Self.Min_maash" />
+    <EntitySet Name="Min_yashlar" EntityType="Self.Min_yashlar" />
+    <EntitySet Name="Sheher" EntityType="Self.Sheher" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Tehsil" EntityType="Self.Tehsil" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="Vezife" EntityType="Self.Vezife" />
+    <AssociationSet Name="FK_CVler_Cinsler" Association="Self.FK_CVler_Cinsler">
+      <End Role="Cinsler" EntitySet="Cinsler" />
+      <End Role="CVler" EntitySet="CVler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CVler_Ish_tecrubesi" Association="Self.FK_CVler_Ish_tecrubesi">
+      <End Role="Ish_tecrubesi" EntitySet="Ish_tecrubesi" />
+      <End Role="CVler" EntitySet="CVler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CVler_Kategoriya" Association="Self.FK_CVler_Kategoriya">
+      <End Role="Kategoriya" EntitySet="Kategoriya" />
+      <End Role="CVler" EntitySet="CVler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CVler_Min_maash" Association="Self.FK_CVler_Min_maash">
+      <End Role="Min_maash" EntitySet="Min_maash" />
+      <End Role="CVler" EntitySet="CVler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CVler_Min_yashlar" Association="Self.FK_CVler_Min_yashlar">
+      <End Role="Min_yashlar" EntitySet="Min_yashlar" />
+      <End Role="CVler" EntitySet="CVler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CVler_Sheher" Association="Self.FK_CVler_Sheher">
+      <End Role="Sheher" EntitySet="Sheher" />
+      <End Role="CVler" EntitySet="CVler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CVler_Tehsil" Association="Self.FK_CVler_Tehsil">
+      <End Role="Tehsil" EntitySet="Tehsil" />
+      <End Role="CVler" EntitySet="CVler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CVler_Vezife" Association="Self.FK_CVler_Vezife">
+      <End Role="Vezife" EntitySet="Vezife" />
+      <End Role="CVler" EntitySet="CVler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Elanlar_Ish_tecrubesi" Association="Self.FK_Elanlar_Ish_tecrubesi">
+      <End Role="Ish_tecrubesi" EntitySet="Ish_tecrubesi" />
+      <End Role="Elanlar" EntitySet="Elanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Elanlar_Kategoriya" Association="Self.FK_Elanlar_Kategoriya">
+      <End Role="Kategoriya" EntitySet="Kategoriya" />
+      <End Role="Elanlar" EntitySet="Elanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Elanlar_Max_maash" Association="Self.FK_Elanlar_Max_maash">
+      <End Role="Max_maash" EntitySet="Max_maash" />
+      <End Role="Elanlar" EntitySet="Elanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Elanlar_Max_yashlar" Association="Self.FK_Elanlar_Max_yashlar">
+      <End Role="Max_yashlar" EntitySet="Max_yashlar" />
+      <End Role="Elanlar" EntitySet="Elanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Elanlar_Min_maash" Association="Self.FK_Elanlar_Min_maash">
+      <End Role="Min_maash" EntitySet="Min_maash" />
+      <End Role="Elanlar" EntitySet="Elanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Elanlar_Min_yashlar" Association="Self.FK_Elanlar_Min_yashlar">
+      <End Role="Min_yashlar" EntitySet="Min_yashlar" />
+      <End Role="Elanlar" EntitySet="Elanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Elanlar_Sheher" Association="Self.FK_Elanlar_Sheher">
+      <End Role="Sheher" EntitySet="Sheher" />
+      <End Role="Elanlar" EntitySet="Elanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Elanlar_Tehsil" Association="Self.FK_Elanlar_Tehsil">
+      <End Role="Tehsil" EntitySet="Tehsil" />
+      <End Role="Elanlar" EntitySet="Elanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Elanlar_Vezife" Association="Self.FK_Elanlar_Vezife">
+      <End Role="Vezife" EntitySet="Vezife" />
+      <End Role="Elanlar" EntitySet="Elanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vezife_Kategoriya" Association="Self.FK_Vezife_Kategoriya">
+      <End Role="Kategoriya" EntitySet="Kategoriya" />
+      <End Role="Vezife" EntitySet="Vezife" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

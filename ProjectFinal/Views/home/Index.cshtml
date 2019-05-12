@@ -1,0 +1,310 @@
+﻿@using ProjectFinal.Models
+@{
+    ViewBag.Title = "Index";
+    int count = 0;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="banner">
+    <div class="container">
+        <div class="banner-caption">
+            <div class="search-form">
+                <div class="row">
+                   
+                        <div class="col-md-4 col-sm-12 p-1">
+                            <select class="form-control " placeholder="Sheher" name="Ad">
+                                <option>Butun Kateqoriyalar</option>
+                                @foreach (Kategoriya item in ViewBag.butun_kategoriyalar)
+                                {
+                                    <option>@item.Ad</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-sm-12 p-1">
+                            <select class="form-control " placeholder="Sheher">
+                                <option>Butun Şeherler</option>
+                                @foreach (Sheher item in ViewBag.butun_sheherler)
+                                {
+                                    <option>@item.Ad</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-sm-12 p-1">
+                            <select class="form-control " placeholder="Sheher">
+                                <option>Əmək haqqı</option>
+                                @foreach (Min_maash item in ViewBag.emek_haqqi)
+                                {
+                                    <option>@item.Mebleg</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-sm-12 p-1">
+                            <select class="form-control " placeholder="Sheher">
+                                <option>Təhsil</option>
+                                @foreach (Tehsil item in ViewBag.tehsil)
+                                {
+                                    <option>@item.Derecesi</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-sm-12 p-1">
+                            <select class="form-control " placeholder="Sheher">
+                                <option>
+                                    İş tecrubesi
+                                </option>
+                                @foreach (Ish_tecrubesi item in ViewBag.ish_tecrubesi)
+                                {
+                                    <option>@item.Ili</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-sm-12 p-1">
+                            <div class="input-group ">
+                                <button type="submit" id="axtar" class="btn btn-danger">
+                                    Axtar
+                                </button>
+                            </div>
+                        </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="jobs">
+    <div class="container">
+        <div class="alljobs">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="@Url.Action("index","kategoriyasina_gore_elanlar", new {id = 1 })">
+                        <div class="jobcat hvr-grow">
+                            <div class="caticon">
+                                <img src="~/Public/img/financy.png" alt="" style="width:80px; height:70px;">
+                            </div>
+                            <div class="cattext">
+                                <h5>Maliyye</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("index","kategoriyasina_gore_elanlar", new {id = 2 })">
+
+                        <div class="jobcat hvr-grow">
+                            <div class="caticon">
+                                <img src="~/Public/img/marketing.png" alt="" style="width:70px; height:70px;">
+                            </div>
+                            <div class="cattext">
+                                <h5>Marketinq</h5>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("index","kategoriyasina_gore_elanlar", new {id = 3 })">
+
+                        <div class="jobcat hvr-grow">
+                            <div class="caticon">
+                                <img src="~/Public/img/it.png" alt="" style="width:70px; height:70px;">
+                            </div>
+                            <div class="cattext">
+                                <h5>Informasiya texnologiyaları</h5>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("index","kategoriyasina_gore_elanlar", new {id = 4 })">
+
+                        <div class="jobcat hvr-grow">
+                            <div class="caticon">
+                                <img src="~/Public/img/inzibati.png" alt="" style="width:70px; height:70px;">
+                            </div>
+                            <div class="cattext">
+                                <h5>İnzibati</h5>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("index","kategoriyasina_gore_elanlar", new {id = 1002 })">
+
+                        <div class="jobcat hvr-grow">
+                            <div class="caticon">
+                                <img src="~/Public/img/sales.png" alt="" style="width:70px; height:70px;">
+                            </div>
+                            <div class="cattext">
+                                <h5>Satış</h5>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("index","kategoriyasina_gore_elanlar", new {id = 1003 })">
+
+                        <div class="jobcat hvr-grow">
+                            <div class="caticon">
+                                <img src="~/Public/img/design.png" alt="" style="width:70px; height:70px;">
+                            </div>
+                            <div class="cattext">
+                                <h5>Dizayn</h5>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("index","kategoriyasina_gore_elanlar", new {id = 1004 })">
+
+                        <div class="jobcat hvr-grow">
+                            <div class="caticon">
+                                <img src="~/Public/img/lawyer.png" alt="" style="width:70px; height:70px;">
+                            </div>
+                            <div class="cattext">
+                                <h5>Hüquqşünaslıq</h5>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("index","kategoriyasina_gore_elanlar", new {id = 1005 })">
+
+                        <div class="jobcat hvr-grow">
+                            <div class="caticon">
+                                <img src="~/Public/img/education.png" alt="" style="width:70px; height:70px;">
+                            </div>
+                            <div class="cattext">
+                                <h5>Təhsil və elm</h5>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("index","kategoriyasina_gore_elanlar", new {id = 1006 })">
+
+                        <div class="jobcat hvr-grow">
+                            <div class="caticon">
+                                <img src="~/Public/img/industry.png" alt="" style="width:70px; height:70px;">
+                            </div>
+                            <div class="cattext">
+                                <h5>Sənaye və kənd təsərrüfatı</h5>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("index","kategoriyasina_gore_elanlar", new {id = 1007 })">
+
+                        <div class="jobcat hvr-grow">
+                            <div class="caticon">
+                                <img src="~/Public/img/xidmet.png" alt="" style="width:70px; height:70px;">
+                            </div>
+                            <div class="cattext">
+                                <h5>Xidmət</h5>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("index","kategoriyasina_gore_elanlar", new {id = 1008 })">
+
+                        <div class="jobcat hvr-grow">
+                            <div class="caticon">
+                                <img src="~/Public/img/medicine.png" alt="" style="width:90px; height:70px;">
+                            </div>
+                            <div class="cattext">
+                                <h5>Tibb və aczaçılıq</h5>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-md-3">
+                    <a href="@Url.Action("index","kategoriyasina_gore_elanlar", new {id = 1009 })">
+
+                        <div class="jobcat hvr-grow">
+                            <div class="caticon">
+                                <img src="~/Public/img/muxtelif.png" alt="" style="width:70px; height:70px;">
+                            </div>
+                            <div class="cattext">
+                                <h5>Müxtəlif</h5>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="son-elanlar">
+    <div class="container">
+        <div class="son-elanlar-basliq">
+            <div class="row">
+                <div class="col-md-3 float-left">
+                    <div class="laatestjobs">
+                        <h3>
+                            Son İş Elanları
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-md-3 float-left">
+                    <div class="showall floa-right">
+                        <a href="@Url.Action("index","hamisi_elan")">
+                            <h4>Hamısını Göstər</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="diger">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="son-elanlar-text">
+            <div class="row">
+                @foreach (Elanlar item in ViewBag.elanlar)
+                {
+                    count++;
+                    if (count > 20)
+                    {
+                        break;
+                    }
+
+                    <div class="col-md-3">
+                        <a href="@Url.Action("index","elan", new {id =item.Id })">
+                            <div class="tek-elan hvr-curl-top-right">
+
+                                <div class="elan-adi">
+
+                                    <h4>@item.Vezife.Ad</h4>
+
+                                </div>
+                                <div class="maas">
+                                    <h5>@item.Min_maash.Mebleg - @item.Max_maash.Mebleg</h5>
+                                </div>
+                                <div class="sirket-adi">
+
+                                    <p>@item.Shirket_adi</p>
+
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+

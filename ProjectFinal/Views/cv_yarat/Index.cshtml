@@ -1,0 +1,173 @@
+﻿@using ProjectFinal.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("add", "cv_yarat", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<section class="parallax_cv">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>CV yarat</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cv_yarat">
+    <div class="container">
+        <div class="row yuxari">
+            <div class="col-md-12">
+                <div class="box">
+                    <i class="fa fa-file-word-o" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <form action="@Url.Action("add","cv_yarat")" method="post"  enctype="multipart/form-data">
+            <div class="row orta">
+                <div class="col-md-4">
+
+                    <input name="Ad" class="form-control" type="text" placeholder="Ad..." required>
+
+                </div>
+                <div class="col-md-4">
+
+                    <input name="Soyad" class="form-control" type="text" placeholder="Soyad..." required>
+
+                </div>
+                <div class="col-md-4">
+
+                    <input name="Ata_adi" class="form-control" type="text" placeholder="Ata Adi..." required>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <select class="form-control" name="CinsId" id="" required>
+                        <option value="">Cins</option>
+                        @foreach (Cinsler item in ViewBag.cinsler)
+            {
+                <option value="@item.Id" required>@item.Cins</option>
+}
+                    </select>
+
+                </div>
+                <div class="col-md-6">
+
+                    <select class="form-control" name="Min_yashId" id="" required>
+                        <option value="">Yash</option>
+                        @foreach (Min_yashlar item in ViewBag.yash)
+            {
+                <option value="@item.Id">@item.Min_yash</option>
+}
+                    </select>
+
+                </div>
+                <div class="col-md-12">
+
+
+                    <label for="Shekil">Upload Image:</label>
+                    <input class="form-control" type="file" name="Shekil" id="Shekil" style="width: 100%;" required />
+
+
+                </div>
+                <div class="col-md-6">
+
+                    <select class="form-control" name="TehsilId" id="" required>
+                        <option value="">Tehsil</option>
+                        @foreach (Tehsil item in ViewBag.tehsil)
+            {
+                <option value="@item.Id">@item.Derecesi</option>
+}
+                    </select>
+
+                </div>
+                <div class="col-md-6">
+
+                    <select class="form-control" name="Ish_tecrubesiId" id="" required>
+                        <option value="">Ish tecrubesi</option>
+                        @foreach (Ish_tecrubesi item in ViewBag.is_tecrubesi)
+            {
+                <option value="@item.Id">@item.Ili</option>
+}
+                    </select>
+
+                </div>
+                <div class="col-md-6">
+
+                    <select class="form-control" name="KategoriyaId" required>
+                        <option value="">Kategoriya</option>
+                        @foreach (Kategoriya item in ViewBag.kategoriyalar)
+            {
+                <option value="@item.Id">@item.Ad</option>
+}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" name="VezifeId" required>
+                        <option value="0">Vezife</option>
+                    </select>
+
+                </div>
+                <div class="col-md-6">
+
+                    <select class="form-control" name="SheherId" id="" required>
+                        <option value="">Sheher</option>
+                        @foreach (Sheher item in ViewBag.sheherler)
+            {
+                <option value="@item.Id">@item.Ad</option>
+}
+
+                    </select>
+
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" name="Min_maashId" id="" required>
+                        <option value="">Minimum Emek Haqqi</option>
+                        @foreach (Min_maash item in ViewBag.minimum_emek_haqqi)
+            {
+                <option value="@item.Id">@item.Mebleg</option>
+}
+
+                    </select>
+                </div>
+                <div class="col-md-6">
+
+                    <input name="Email" class="form-control" type="email" placeholder="Email..." required>
+
+                </div>
+                <div class="col-md-6">
+
+                    <input name="Telefon" class="form-control" type="text" placeholder="Telefon..." required>
+
+                </div>
+                <div class="col-md-12">
+                    <textarea data-length=999 class="form-control" name="Elave_melumat" id="" cols="30" rows="5" placeholder="Elave Melumat..." required></textarea>
+                    <h4><span class="char-count-Elave_melumat">999</span> simvol</h4>
+
+                </div>
+                <div class="col-md-12">
+                    @ViewBag.cvnin_tarixi
+                </div>
+
+                <div class="col-md-6">
+
+                    <input name="Status" class="form-control" type="hidden" value="false">
+
+                </div>
+
+
+                <div class="col-md-12">
+
+                    <button class="float-right" type="submit">Yerleshdirmek</button>
+
+                </div>
+
+            </div>
+        </form>
+    </div>
+</section>
+}
+

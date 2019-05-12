@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ce990dc9b0f64d03ba1639458c68d2da" Name="Diagram1">
+        <EntityTypeShape EntityType="isaxtarModel.Blog" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.Cinsler" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.CVler" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.Elanlar" Width="1.5" PointX="8.25" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.Haqqimizda" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.Ish_tecrubesi" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.Istifadeci" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.Kategoriya" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.Max_maash" Width="1.5" PointX="6" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.Max_yashlar" Width="1.5" PointX="6" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.Min_maash" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.Min_yashlar" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.Sheher" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.Tehsil" Width="1.5" PointX="3" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.Users" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="isaxtarModel.Vezife" Width="1.5" PointX="3" PointY="22.75" IsExpanded="true" />
+        <AssociationConnector Association="isaxtarModel.FK_CVler_Cinsler" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_CVler_Ish_tecrubesi" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_CVler_Kategoriya" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_CVler_Min_maash" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_CVler_Min_yashlar" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_CVler_Sheher" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_CVler_Tehsil" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_CVler_Vezife" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_Elanlar_Ish_tecrubesi" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_Elanlar_Kategoriya" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_Elanlar_Max_maash" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_Elanlar_Max_yashlar" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_Elanlar_Min_maash" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_Elanlar_Min_yashlar" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_Elanlar_Sheher" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_Elanlar_Tehsil" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_Elanlar_Vezife" ManuallyRouted="false" />
+        <AssociationConnector Association="isaxtarModel.FK_Vezife_Kategoriya" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

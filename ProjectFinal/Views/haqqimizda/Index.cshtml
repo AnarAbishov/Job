@@ -1,0 +1,26 @@
+﻿@using ProjectFinal.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="haqqimizda">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Haqqimizda</h1>
+                @foreach (Haqqimizda item in ViewBag.haqqimizda)
+                {
+                    <h4>@Html.Raw(item.Basliq)</h4>
+                    <h6>
+                        @Html.Raw(item.Text)
+
+                    </h6>
+                }
+
+
+                
+            </div>
+        </div>
+    </div>
+</section>

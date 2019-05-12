@@ -1,0 +1,49 @@
+﻿@using ProjectFinal.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="inner-header-title">
+    <div class="container">
+        <h1>Blog Page</h1>
+    </div>
+</section>
+<section class="category">
+    <div class="container">
+        <div class="row m-0 ">
+            <div class="col-md-8" id="paginate">
+                @foreach (Blog item in ViewBag.blog)
+                {
+                    <artivle class="blog-news tr">
+                        <div class="short-blog">
+                            <div class="img-holder">
+                                <a href="#">
+                                    <img src="~/Uploads/@item.Sekil" class="img-fluid" alt="News">
+                                </a>
+                                <div class="blog-post-date">@item.Tarix</div>
+                            </div>
+                            <div class=" blog-content">
+                                <a href="#">
+                                    @Html.Raw(item.Basliq)
+                                </a>
+                                <div class="blog-text">
+                                    @Html.Raw(item.Text)
+                                </div>
+                            </div>
+                        </div>
+                    </artivle>
+                }
+            </div>
+            <div class="col-md-4 col-sm-4">
+
+            </div>
+        </div>
+        <div class="row">
+            <div id='page_navigation'>
+
+            </div>
+        </div>
+    </div>
+</section>
+

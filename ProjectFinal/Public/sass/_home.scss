@@ -1,0 +1,168 @@
+.banner{
+    background: url(../img/banner-1.jpg);
+    padding: 9em 0;
+    text-align: center;
+    color: #fff;
+    overflow: visible;
+    border-bottom: 4px solid $primary-color;
+    background-size: cover;
+    z-index: 2;
+    .search-form{
+        padding: 20px;
+        display: table;
+        width: 100%;
+        background: rgba(255,255,255,.2);
+        border-radius: 4px;
+        select{
+            border-radius:0px;
+            height: 50px!important;
+            &:hover{
+                border:1px solid $primary-color;
+            }
+        }
+        button{
+            border-radius:0px;
+            height: 50px;
+            width: 100%;
+        }
+    }
+}
+.jobs {
+    padding: 40px 0;
+    background-color: #f4f7f7;
+
+    .alljobs {
+        text-align: center;
+
+        .jobcat {
+            height: 80%;
+            width: 100%;
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 15px 0px;
+            transition: all .2s ease-in-out;
+            box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.4);
+
+            &:hover {
+                box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, .4);
+            }
+
+            .caticon {
+
+                .fa {
+                    position: relative;
+                    font-size: 25px;
+                    background-color: $primary-color;
+                    border-radius: 100%;
+                    color: white;
+                    width: 60px;
+                    height: 60px;
+                    line-height: 60px;
+                    margin-bottom: 10px;
+                    transition: ease-in-out .4s;
+
+                    &:hover {
+                        background-color: white;
+                        color: $primary-color;
+                        border: 1px solid $primary-color;
+                    }
+                }
+            }
+
+            .cattext {
+                h5 {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+.son-elanlar {
+    margin-top: 30px;
+    background-color: #f4f7f7;
+
+    .son-elanlar-basliq {
+        margin-bottom: 20px;
+
+        .laatestjobs {
+            color: gray;
+            border-bottom: none;
+            border-radius: 5px;
+            background-color: #fff;
+
+            h3 {
+                padding: 15px 10px;
+            }
+        }
+
+        .showall {
+            color: gray;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            h4 {
+                padding: 15px 10px;
+                color: $primary-color;
+            }
+        }
+    }
+
+    .son-elanlar-text {
+        background-color: #fff;
+        box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+        border: 1px solid lightgray;
+        padding: 35px 18px;
+        margin-bottom: 100px;
+        border-radius: 10px;
+
+        a {
+            color: $primary-color;
+        .tek-elan {
+            height: 90%;
+            margin-bottom: 10px;
+            border-radius: 3px;
+            width: 100%;
+            padding: 4px 10px;
+            border: 1px solid lightgray;
+            background-color: #f7f7f7;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                box-shadow: 0 2px 3px rgba(0,0,0,0.5);
+            }
+
+            .elan-adi {
+                a {
+                    text-decoration: none;
+                }
+            }
+
+            .maash {
+                text-decoration: none;
+            }
+
+            .sirket-adi {
+                a {
+                    text-decoration: none;
+
+                    p {
+                        color: rgb(85, 83, 83);
+                    }
+                }
+                }
+            }
+        }
+    }
+}
+
+    @media only screen and (max-width: 500px) {
+        
+    }
+    

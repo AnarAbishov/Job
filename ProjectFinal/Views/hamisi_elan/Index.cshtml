@@ -1,0 +1,140 @@
+﻿@using ProjectFinal.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="banner">
+    <div class="container">
+        <div class="banner-caption">
+            <div class="search-form">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 p-1">
+                        <select class="form-control " placeholder="Sheher">
+                            <option>Butun Kateqoriyalar</option>
+                            @foreach (Kategoriya item in ViewBag.butun_kategoriyalar)
+                            {
+                                <option>@item.Ad</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4 col-sm-12 p-1">
+                        <select class="form-control " placeholder="Sheher">
+                            <option>Butun Şeherler</option>
+                            @foreach (Sheher item in ViewBag.butun_sheherler)
+                            {
+                                <option>@item.Ad</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4 col-sm-12 p-1">
+                        <select class="form-control " placeholder="Sheher">
+                            <option>Əmək haqqı</option>
+                            @foreach (Min_maash item in ViewBag.emek_haqqi)
+                            {
+                                <option>@item.Mebleg</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4 col-sm-12 p-1">
+                        <select class="form-control " placeholder="Sheher">
+                            <option>Təhsil</option>
+                            @foreach (Tehsil item in ViewBag.tehsil)
+                            {
+                                <option>@item.Derecesi</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4 col-sm-12 p-1">
+                        <select class="form-control " placeholder="Sheher">
+                            <option>
+                                İş tecrubesi
+                            </option>
+                            @foreach (Ish_tecrubesi item in ViewBag.ish_tecrubesi)
+                            {
+                                <option>@item.Ili</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4 col-sm-12 p-1">
+                        <div class="input-group ">
+                            <button type="submit" class="btn btn-danger">
+                                Axtar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hamisini-goster">
+    <div class="container">
+        <div class="iki-hisse">
+            <div class="hamisi-yuxari">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="basliq float-left">
+                            <h3>Bütün Elanlar:</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="elan-sayi float-left">
+                            <h3>Ümumi @ViewBag.elanlarin_sayi Elan</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-6"></div>
+                </div>
+            </div>
+            <div class="hamisi-asagi" id="paginate">
+                <div class="row">
+                    @foreach (Elanlar item in ViewBag.elanlar)
+                    {
+                        <div class="col-md-6 tr">
+                            <div class="hamisi-tek">
+
+                                <div class="hamisi-adi">
+                                    <h3>
+                                        @item.Vezife.Ad
+                                    </h3>
+                                </div>
+                                <div class="hamisi-sirket">
+                                    <a href="#">@item.Shirket_adi</a>
+                                </div>
+                                <div class="hamisi-maas float-left">
+                                    @item.Min_maash.Mebleg - @item.Max_maash.Mebleg
+                                </div>
+                                <div class="hamisi-etrafli">
+                                    <a href="@Url.Action("index","elan", new {id =item.Id })">
+                                        <button class="btn " style="cursor:pointer;">Bax</button>
+                                    </a>
+                                </div>
+                                <div class="hamisi-text">
+                                    <p>
+                                        <b>Ish barede melumat :</b>  <br /> @Html.Raw(item.Ish_barede_melumat.Length > 150 ? item.Ish_barede_melumat.Substring(0, 150) : item.Ish_barede_melumat) ... <br />
+                                        <b>Namizede telebler :</b>  <br /> @Html.Raw(item.Namizede_telebler.Length > 150 ? item.Namizede_telebler.Substring(0, 150) : item.Namizede_telebler) ...
+                                    </p>
+                                </div>
+                                <div class="hamisi-seher float-left">
+                                    <b>Sheher :</b> <i>@item.Sheher.Ad</i><br />
+                                </div>
+                                <div class="hamisi-email float-right">
+                                    <a href="#">
+                                        <i>@item.Email</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                <div class="row">
+                    <div id='page_navigation'>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

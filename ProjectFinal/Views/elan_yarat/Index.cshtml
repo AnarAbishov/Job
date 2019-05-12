@@ -1,0 +1,156 @@
+﻿@using ProjectFinal.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="parallax_elan_yarat">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Elan yarat</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="elan_yarat">
+    <div class="container">
+        <div class="row yuxari">
+            <div class="col-md-12">
+                <div class="box">
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <form action="@Url.Action("add","elan_yarat")" method="post">
+            <div class="row orta">
+                <div class="col-md-12">
+                    <h3>Əlaqə</h3>
+                </div>
+                <div class="col-md-6">
+                    <input name="Email" class="form-control" type="email" placeholder="Email" required>
+                </div>
+                <div class="col-md-6">
+                    <input name="Telefon" class="form-control" type="text" placeholder="Telefon" required>
+                </div>
+                <div class="col-md-12">
+                    <hr>
+                </div>
+                <div class="col-md-12">
+                    <h3>Elan</h3>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control" name="KategoriyaId" id="" required>
+                        <option value="">Kategoriya</option>
+                        @foreach (Kategoriya item in ViewBag.kategoriyalar)
+            {
+                <option value="@item.Id">@item.Ad</option>
+}
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control" name="VezifeId" id="" required>
+                        <option value="">Vezife</option>
+                        @foreach (Vezife item in ViewBag.vezife)
+            {
+                <option value="@item.Id">@item.Ad</option>
+}
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control" name="SheherId" id="" required>
+                        <option value="">Sheher</option>
+                        @foreach (Sheher item in ViewBag.sheher)
+            {
+                <option value="@item.Id">@item.Ad</option>
+}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" name="Min_maashId" id="" required>
+                        <option value="">Minimum əmək haqqı (AZN)</option>
+                        @foreach (Min_maash item in ViewBag.minimum_emek_haqqi)
+            {
+                <option value="@item.Id">@item.Mebleg</option>
+}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" name="Max_maashId" id="" required>
+                        <option value="">Maximum əmək haqqı (AZN)</option>
+                        @foreach (Max_maash item in ViewBag.maximum_emek_haqqi)
+            {
+                <option value="@item.Id">@item.Mebleg</option>
+}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" name="Min_yashId" id="" required>
+                        <option value="">Minimum yaş</option>
+                        @foreach (Min_yashlar item in ViewBag.minimum_yash)
+            {
+                <option value="@item.Id">@item.Min_yash</option>
+}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" name="Max_yashId" id="" required>
+                        <option value="">Maximum yaş</option>
+                        @foreach (Max_yashlar item in ViewBag.maximum_yash)
+            {
+                <option value="@item.Id">@item.Max_yash</option>
+}
+                    </select>
+                </div>
+                <div class="col-md-6">
+
+                    <select class="form-control" name="TehsilId" id="" required>
+
+                        <option value="">Tehsil</option>
+                        @foreach (Tehsil item in ViewBag.tehsil)
+            {
+                <option value="@item.Id">@item.Derecesi</option>
+}
+                    </select>
+                </div>
+                <div class="col-md-6">
+
+                    <select class="form-control" name="Ish_tecrubesiId" id="" required>
+                        <option value="">Ish tecrubesi</option>
+                        @foreach (Ish_tecrubesi item in ViewBag.ish_tecrubesi)
+            {
+                <option value="@item.Id">@item.Ili</option>
+}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <textarea data-length=999 class="form-control1" name="Namizede_telebler" id="" cols="30" rows="5" placeholder="Namizədə tələblər..." required></textarea>
+                    <h5><span class="char-count-Namizede_telebler">999</span> simvol</h5>
+                </div>
+                <div class="col-md-6">
+                    <textarea data-length=999 class="form-control2" name="Ish_barede_melumat" id="" cols="30" rows="5" placeholder="İş barədə məlumat..." required></textarea>
+                    <h5><span class="char-count-Ish_barede_melumat">999</span> simvol</h5>
+                </div>
+
+                <div class="col-md-6">
+                    <input class="form-control" name="Shirket_adi" type="text" placeholder="Şirkətin adı..." required>
+                </div>
+                <div class="col-md-6">
+                    <input class="form-control" name="Elaqedar_shexs" type="text" placeholder="Əlaqədar şəxs..." required>
+                </div>
+                <div class="col-md-12">
+                    @ViewBag.elanin_tarixi
+                </div>
+                <div class="col-md-6">
+
+                    <input name="Status" class="form-control" type="hidden" value="false">
+
+                </div>
+                <div class="col-md-12">
+                    <button class="float-right hvr-grow" type="submit">Yerleshdirmek</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+

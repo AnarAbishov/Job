@@ -1,0 +1,95 @@
+﻿@using ProjectFinal.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="parallax_elan">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title">
+                    <h2>@ViewBag.cv.Kategoriya.Ad : </h2>
+                    <h2>@ViewBag.cv.Vezife.Ad</h2>
+                    <br>
+                    <h3 class="company">@ViewBag.cv.Ad @ViewBag.cv.Soyad @ViewBag.cv.Ata_adi oglu - </h3>
+                    <h3 class="maash">@ViewBag.cv.Min_maash.Mebleg</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="parametrler">
+                    <ul>
+                        <li>
+                            <h5>Şəhər : </h5>
+                            <h6>@ViewBag.cv.Sheher.Ad</h6>
+                        </li>
+                        <li>
+                            <h5>Yaş : </h5>
+                            <h6>@ViewBag.cv.Min_yashlar.Min_yash</h6>
+                        </li>
+                        <li>
+                            <h5>Cins : </h5>
+                            <h6>@ViewBag.cv.Cinsler.Cins</h6>
+                        </li>
+                        <li>
+                            <h5>Təhsil : </h5>
+                            <h6>@ViewBag.cv.Tehsil.Derecesi</h6>
+                        </li>
+                        <li>
+                            <h5>İş təcrübəsi : </h5>
+                            <h6>@ViewBag.cv.Ish_tecrubesi.Ili</h6>
+                        </li>
+                        <li>
+                            <h5>Elanın tarixi : </h5>
+                            <h6>@ViewBag.cv.Cvnin_tarixi</h6>
+                        </li>
+                        <li>
+                            <h5>Bitmə tarixi : </h5>
+                            <h6>@ViewBag.cv.Bitme_tarixi</h6>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="elaqe">
+                    <ul>
+                        <li>
+                            <h5>Sekil : </h5>
+                            <img src="~/Uploads/@ViewBag.cv.Shekil" width="100" />
+
+                        </li>
+                        <li>
+                            <h5>Telefon : </h5>
+                            <h6>@ViewBag.cv.Telefon</h6>
+                        </li>
+                        <li>
+                            <h5>E-mail : </h5>
+                            <h6>@ViewBag.cv.Email</h6>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="melumat">
+                    <ul>
+                        <li>
+                            <h6>Elave məlumat</h6>
+                            <p>
+                                @Html.Raw(ViewBag.cv.Elave_melumat)
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row comments">
+            <div class="col-md-12">
+                <div class="fb-comments" style="margin-top: 3%;" data-href="http://localhost:51808/cv/index" data-width="600" data-mobile data-numposts="10"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
